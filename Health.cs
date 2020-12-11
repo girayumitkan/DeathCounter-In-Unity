@@ -41,6 +41,7 @@ namespace Platformer.Mechanics
             {
                 var ev = Schedule<HealthIsZero>();
                 ev.health = this;
+                DeathCounter.deathValue += 1;
             }
         }
 
@@ -51,7 +52,6 @@ namespace Platformer.Mechanics
         {
 
             while (currentHP > 0) Decrement();
-            DeathCounter.deathValue += 1;
         }
 
         void Awake()
